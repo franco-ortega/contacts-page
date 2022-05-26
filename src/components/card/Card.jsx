@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Card.module.css';
 
 const Card = ({ avatar, name, email, phone }) => {
   return (
-    <div>
-      <img src={avatar} alt={`Thumbnail photo of ${name}`} />
+    <div className={styles.Card}>
+      <div>
+        <img src={avatar} alt={`Thumbnail photo of ${name}`} />
+
+      </div>
       <div>
         <h2>{name}</h2>
         <p>{email}</p>

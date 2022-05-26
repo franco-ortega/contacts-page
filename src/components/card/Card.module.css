@@ -1,4 +1,17 @@
 .Card {
+    border: .1rem solid rgb(134, 132, 132);
+    border-radius: .5rem;
+
     display: flex;
     flex-direction: row;
+    flex: 1 1 0;
+    gap: .75rem;
+
+    margin: 2rem;
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+.Card img {
+    border: .1rem solid rgb(0, 0, 0);
+    min-height: 100%;
 }
