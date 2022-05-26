@@ -1,12 +1,14 @@
 import React from 'react';
+import CardList from './components/cardList/CardList';
 import { useContacts } from './hooks/useContacts';
 
 const App = () => {
   const { contacts } = useContacts();
-  console.log(contacts);
 
   return (
-    <div>App</div>
+    <div>
+      <CardList contacts={contacts} />
+    </div>
   );
 };
 
