@@ -1,0 +1,40 @@
+.Card {
+    border: .1rem solid rgb(130, 130, 130);
+    border-radius: .5rem;
+
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    gap: .75rem;
+
+    margin: 2rem;
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+.Card img {
+    border: .1rem solid rgb(0, 0, 0);
+    min-height: 100%;
+}
+
+.Card h2 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.Card h2 + p {
+    margin-bottom: .5rem;
+}
+
+.Card p {
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .Card {
+        min-width: 25rem;
+        max-width: fit-content;
+    }
+    
+}
