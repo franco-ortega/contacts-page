@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <Search contacts={contacts} setContactsToDisplay={setContactsToDisplay} />
-      <CardList contacts={contactsToDisplay} />
+      <CardList contacts={contacts} contactsToDisplay={contactsToDisplay} />
     </div>
   );
 };

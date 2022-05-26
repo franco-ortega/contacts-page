@@ -1,31 +1,37 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Card from '../card/Card';
 import Loading from '../loading/Loading';
+import NoResults from '../noResults/NoResults';
+import PropTypes from 'prop-types';
 import styles from './CardList.module.css';
 
-const CardList = ({ contacts }) => {
-  console.log(contacts);
+const CardList = ({ contacts, contactsToDisplay }) => {
 
-  const cardList = contacts.map(contact => (
+  const cardList = contactsToDisplay.map(contact => (
     <Card
       key={contact.id.value || contact.phone}
       avatar={contact.picture.thumbnail}
-      name={contact.name.first + ' ' + contact.name.last}
+      name={`${contact.name.first} ${contact.name.last}`}
       email={contact.email}
       phone={contact.phone}
     />
   ));
 
-  if(contacts.length === 0) return <Loading />;
-
   return (
-    <div className={styles.CardList}>{cardList}</div>
+    <div className={styles.CardList}>
+      {
+        contacts.length === 0 ? <Loading />
+          : contacts.length > 0 && contactsToDisplay.length === 0
+            ? <NoResults />
+            : cardList
+      }
+    </div>
   );
 };
 
 CardList.propTypes = {
-  contacts: PropTypes.array.isRequired
+  contacts: PropTypes.array.isRequired,
+  contactsToDisplay: PropTypes.array.isRequired
 };
 
 export default CardList;
