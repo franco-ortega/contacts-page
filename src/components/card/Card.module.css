@@ -17,12 +17,18 @@
 }
 
 .Card h2 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.Card h2 + p {
     margin-bottom: .5rem;
 }
 
 .Card p {
     font-weight: 600;
 }
+
 
 @media screen and (min-width: 1000px) {
 
